@@ -1,8 +1,12 @@
 import React from 'react'
+import Categories from '../categories/Categories'
+const Products = ({info}) => {
 
-const Products = () => {
+
   return (
-    <div>Products</div>
+    <div>
+        <Categories/>
+    </div>
   )
 }
 
