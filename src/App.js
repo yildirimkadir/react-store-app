@@ -7,6 +7,7 @@ import axios from 'axios';
 function App() {
 
   const [info, setInfo] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const url = "https://fakestoreapi.com/products";
 
@@ -23,12 +24,17 @@ function App() {
     getProduct();
   }, []);
 
+  const handleAddToCard = (product, quantity) => {
+    const isAdded = cart.some((item) => item.id === product.id);
+    !isAdded && setCart([...cart, { ...product, quantity }]);
+  };
+
   console.log(info);
 
   return (
     <div>
-      <Navbar />
-      <Products info={info} />
+      <Navbar totalItems={cart?.length} />
+      <Products info={info} handleAddToCard={handleAddToCard} />
     </div>
   );
 }

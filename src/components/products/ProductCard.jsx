@@ -7,7 +7,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
-const ProductCard = ({item}) => {
+const ProductCard = ({item, handleAddToCard}) => {
     const {category, description, image, price, title} = item;
   return (
     <div>
@@ -32,7 +32,17 @@ const ProductCard = ({item}) => {
                     {category}
                    </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    <IconButton>
+                    <IconButton  onClick={() =>
+              handleAddToCart(
+                {
+                  id: id,
+                  title: title,
+                  price: price,
+                  image: image,
+                },
+                1
+              )
+            }>
                       < AddShoppingCartIcon/>
                     </IconButton>
                   </Typography>

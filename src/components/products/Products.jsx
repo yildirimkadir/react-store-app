@@ -3,7 +3,7 @@ import Categories from '../categories/Categories'
 import {Container, Grid} from '@mui/material/';
 import { useState } from 'react';
 import ProductCard from './ProductCard';
-const Products = ({info}) => {
+const Products = ({info, handleAddToCart}) => {
 // const [category, setCategory] = useState([])
 
   return (
@@ -14,7 +14,7 @@ const Products = ({info}) => {
         {info?.map((item) => {
             return(
             <Grid item>
-            <ProductCard item={item}/>
+            <ProductCard handleAddToCart={handleAddToCard} item={item}/>
             </Grid>
             )
         })}
