@@ -8,21 +8,14 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import storeApp from '../../assets/store-app3.png'
 
-export default function MenuAppBar() {
+export default function MenuAppBar({totalItems, showCard, setShowCard}) {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
+  const handleMenu = () => {
+    setShowCard(!showCard)
   };
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -52,7 +45,7 @@ export default function MenuAppBar() {
                 onClick={handleMenu}
                 color="inherit"
               >
-              <Badge badgeContent={7} color="primary" max={99}>
+              <Badge badgeContent={totalItems} color="primary" max={99}>
               <ShoppingCartIcon color="action" />
               </Badge>
             </IconButton>

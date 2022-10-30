@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
 const ProductCard = ({item, handleAddToCard}) => {
-    const {category, description, image, price, title} = item;
+    const {category, description, image, price, title, id} = item;
   return (
     <div>
         <Card sx={{ maxWidth: 345, mt: '2rem' }}>
@@ -33,7 +33,7 @@ const ProductCard = ({item, handleAddToCard}) => {
                    </Typography>
                   <Typography variant="body2" color="text.secondary">
                     <IconButton  onClick={() =>
-              handleAddToCart(
+              handleAddToCard(
                 {
                   id: id,
                   title: title,
