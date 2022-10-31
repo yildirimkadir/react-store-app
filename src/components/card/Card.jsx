@@ -21,14 +21,14 @@ const Cart = ({card, setCard,  handleUpdateCartQty, handleRemove, handleEmptyCar
     const EmptyCart = () => {
     return (
       <Typography variant="subtitle1">
-        You have no items in your shopping cart,
+        There is no item in your shopping card!, 
         <Link
           href="/"
           sx={{
             textDecoration: "none",
           }}
         >
-          start adding some!
+        start shopping 🤗
         </Link>
       </Typography>
     );

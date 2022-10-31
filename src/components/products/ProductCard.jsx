@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
 const ProductCard = ({item, handleAddToCard}) => {
-    const {category, description, image, price, title, id} = item;
+    const {category, image, price, title, id} = item;
   return (
     <div>
         <Card sx={{ maxWidth: 345, mt: '2rem' }}>
