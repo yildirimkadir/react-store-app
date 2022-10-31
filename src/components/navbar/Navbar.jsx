@@ -12,14 +12,14 @@ export default function MenuAppBar({totalItems, showCard, setShowCard}) {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleMenu = () => {
+  const handleClick = () => {
     setShowCard(!showCard)
   };
 
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color='inherit' sx={{
+      <AppBar position="fixed" color='inherit' sx={{
         borderBottom: "1px solid rgba(0, 0, 0, 0.12)"
       }}>
         <Toolbar>
@@ -42,7 +42,7 @@ export default function MenuAppBar({totalItems, showCard, setShowCard}) {
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handleMenu}
+                onClick={handleClick}
                 color="inherit"
               >
               <Badge badgeContent={totalItems} color="primary" max={99}>
