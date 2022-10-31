@@ -4,7 +4,7 @@ import Products from './components/products/Products';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
-import Card from './components/card/Card'
+import Cart from './components/card/Card'
 function App() {
 
   const [info, setInfo] = useState([]);
@@ -31,6 +31,29 @@ function App() {
     const isAdded = card.some((item) => item.id === product.id);
     !isAdded && setCard([...card, { ...product, quantity }]);
   };
+
+  const handleUpdateCartQty = (productId, quantity) => {
+    if (quantity === 0) {
+      handleRemove(productId);
+    } else {
+      const updatedCard = card.map((item) =>
+        item.id === productId ? { ...item, quantity } : item
+      );
+      setCard(updatedCard);
+    }
+  };
+
+  const handleRemove = (productId) => {
+    const filterCard = card.filter((item) => item.id !== productId);
+    setCard(filterCard);
+  };
+
+  const handleEmptyCart = () => setCard([]);
+
+
+
+
+
   console.log(info);
   console.log(card);
   return (
@@ -38,7 +61,9 @@ function App() {
       <Navbar totalItems={card?.length} showCard={showCard} setShowCard={setShowCard} />
       {!showCard ?
         <Products info={info} handleAddToCard={handleAddToCard} />
-        : <Card />
+        : <Cart card={card} setCard={setCard} handleUpdateCartQty={handleUpdateCartQty}
+          handleRemove={handleRemove}
+          handleEmptyCart={handleEmptyCart} />
       }
     </div>
   );
