@@ -11,7 +11,6 @@ import { Link } from '@mui/material/';
 
 export default function MenuAppBar({totalItems, showCard, setShowCard}) {
   const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = () => {
     setShowCard(!showCard)
@@ -32,7 +31,7 @@ export default function MenuAppBar({totalItems, showCard, setShowCard}) {
             sx={{ mr: 2 }}
           >
         <Link
-          href="/"
+          href="/react-store-app"
         >
         <img src={storeApp} height="50px" width="40px" alt="storeApp"></img>
         </Link>

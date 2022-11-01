@@ -23,7 +23,7 @@ const Cart = ({card, setCard,  handleUpdateCartQty, handleRemove, handleEmptyCar
       <Typography variant="subtitle1">
         There is no item in your shopping card!, 
         <Link
-          href="/"
+          href="/react-store-app"
           sx={{
             textDecoration: "none",
           }}
