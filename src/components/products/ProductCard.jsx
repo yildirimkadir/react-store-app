@@ -7,7 +7,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
-const ProductCard = ({item, handleAddToCard}) => {
+const ProductCard = ({item, handleAddToCard, radioBut}) => {
     const {category, image, price, title, id} = item;
   return (
     <div>

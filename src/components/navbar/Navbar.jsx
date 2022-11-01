@@ -20,7 +20,7 @@ export default function MenuAppBar({totalItems, showCard, setShowCard}) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color='inherit' sx={{
+      <AppBar position="static" color='inherit' sx={{
         borderBottom: "1px solid rgba(0, 0, 0, 0.12)"
       }}>
         <Toolbar>

@@ -6,8 +6,9 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+import { Link } from '@mui/material/';
 
-const Categories = () => {
+const Categories = ({handleClick}) => {
     const [categorie, setCategorie] = useState([])
 
     const url = "https://fakestoreapi.com/products/categories";
@@ -25,6 +26,8 @@ const Categories = () => {
     getCategorie();
   }, []);
 console.log(categorie);
+
+
   return (
     <div>
         <FormControl>
@@ -33,12 +36,12 @@ console.log(categorie);
         aria-labelledby="demo-row-radio-buttons-group-label"
         name="row-radio-buttons-group"
       >
-        <FormControlLabel value="All" control={<Radio />} label="All" />
+        <FormControlLabel value="all" control={<Radio />} label="All" onClick={(e)=>handleClick(e)}/>
 
         {categorie?.map((item, index)=> {
-            console.log(item);
+            
             return (
-                <FormControlLabel key={index} value={item} control={<Radio />} label={item} />
+                <FormControlLabel key={index} value={item} control={<Radio />} label={item} onClick={(e)=>handleClick(e)} />
             )
 
         })}
